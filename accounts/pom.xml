@@ -2,15 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.revature</groupId>
         <artifactId>shop</artifactId>
         <version>1</version>
     </parent>
 
+	<groupId>com.example</groupId>
     <artifactId>accounts</artifactId>
+    <version>1</version>
     <name>RevShopAccounts</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>16</java.version>
+        <spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -25,9 +31,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.revature.shop.ShopApplication</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
