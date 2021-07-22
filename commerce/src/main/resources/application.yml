@@ -1,0 +1,15 @@
+server:
+  port: 8200
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:commerce
+  application:
+    name: commerceMS
+  profiles:
+    active: email
+  cloud:
+    config:
+      name: shop
+  config:
+    import: configserver:http://localhost:8888

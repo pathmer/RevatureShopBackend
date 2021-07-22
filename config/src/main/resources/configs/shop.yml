@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: '*'
+  metrics:
+    enabled: true
+
+management:
+  endpoint:
+    hystrix:
+      stream:
+        enabled: true
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka/

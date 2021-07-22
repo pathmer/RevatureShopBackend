@@ -1,0 +1,22 @@
+Overview of the commerce microservice layer before this commit:
+
+full implementation, all endpoints passsing corresponding controller e2e-tests: 
+   endpoint                       method
+"/welcomeToCommerce"               GET
+"/addtocart"                       PUT
+"/removefromcart"                  DELETE
+"/savecart"                        POST
+"/checkoutcart"                    POST
+"/myCart/{shopper}"                GET 
+
+
+In this commit, the following is accomplished:
+1) PurchaseHistory class is added to the model folder. This is a persistent class.
+2) PurchaseHistoryRepository interface is added to the repository folder, it implements a method that returns the purchase history of
+a given user using his/her email
+3) In CartService class in the service folder, I have a modification and an addition:
+    - The modification: checkoutCart method is modified to persist PurchaseHistory after checking out the cart
+    - The addition: getShoppoingHistory method is implemented returning a list of PurchaseHistory related to the shopper
+4) In CartController, implemented the endpoint: "/myOrderHistory/{shopper}" to be available for the account microservice.
+
+
